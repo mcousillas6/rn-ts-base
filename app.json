@@ -1,0 +1,12 @@
+{
+  "name": "MFSDriver",
+  "displayName": "MFSDriver",
+  "expo": {
+    "name": "MFSDriver",
+    "slug": "MFSDriver",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
