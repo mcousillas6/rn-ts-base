@@ -17,7 +17,7 @@
   "parser": "babel-eslint",
   "rules": {
     "arrow-parens": ["error", "as-needed"],
-    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
     "react/forbid-prop-types": "off",
     "import/order": [
       "error",
@@ -29,5 +29,20 @@
     "import/resolver": {
       "babel-module": {}
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "import/namespace": "off",
+        "radix": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-use-before-define": "off"
+      }
+    }
+  ]
 }
