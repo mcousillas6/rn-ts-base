@@ -6,6 +6,7 @@ import RootNavigation from 'navigation';
 import useCachedResources from 'hooks/useCachedResources';
 import useColorScheme from 'hooks/useColorScheme';
 import LoadingIndicator from 'components/LoadingIndicator';
+import theme from 'styles/theme';
 
 export default function App() {
   const colorScheme = useColorScheme();
@@ -15,7 +16,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <PaperProvider>
+      <PaperProvider theme={theme[colorScheme]}>
         <RootNavigation colorScheme={colorScheme} />
         <StatusBar />
       </PaperProvider>
