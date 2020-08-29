@@ -1,0 +1,38 @@
+overwrite: true
+schema: "http://localhost:4000"
+documents: "src/**/*.graphql"
+generates:
+  src/:
+    preset: near-operation-file
+    presetConfig:
+      baseTypesPath: graphql.ts
+      extension: .generated.tsx
+    plugins:
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      apolloClientVersion: 3
+      namingConvention:
+        typeNames: change-case#pascalCase
+        enumValues: change-case#upperCase
+      reactApolloVersion: 3
+      transformUnderscore: true
+      withComponent: false
+      withHOC: false
+      withHooks: true
+      withResultType: false
+      withMutationOptionsType: false
+  src/graphql/generated.d.ts:
+    config:
+      apolloClientVersion: 3
+      federation: true
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+      - "typescript-graphql-files-modules"
+      - "typescript-document-nodes"
+      - "fragment-matcher"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"

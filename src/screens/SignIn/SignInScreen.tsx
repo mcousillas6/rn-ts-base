@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, KeyboardAvoidingView, Platform } from 'react-native';
+import { Text, KeyboardAvoidingView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { TextInput, Button } from 'react-native-paper';
 import styles from './styles';

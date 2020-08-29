@@ -14,9 +14,11 @@
     "plugin:prettier/recommended",
     "prettier/react"
   ],
+  "ignorePatterns": ["*.d.ts", "*.generated.ts", "*.generated.tsx", "*.graphql"],
   "parser": "babel-eslint",
   "rules": {
     "arrow-parens": ["error", "as-needed"],
+    "class-methods-use-this": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
     "react/forbid-prop-types": "off",
     "import/order": [
